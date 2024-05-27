@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      body {
+        background-image: url(https://cdn.pixabay.com/photo/2021/07/24/07/25/chow-chow-6488849_1280.jpg);
+
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      #top {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      button:active {
+        background-color: #003f7f;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">0</div>
+    <button onclick="inc()">Increment</button>
+    <button onclick="dec()">Decrement</button>
+    <button onclick="reset()">Reset</button>
+
+    <script>
+      let count = 0;
+
+      function updateCounter() {
+        const counterElement = document.getElementById("top");
+        counterElement.textContent = count;
+      }
+
+      function inc() {
+        count++;
+        updateCounter();
+      }
+
+      function dec() {
+        if (count < 1) {
+          alert("Bas Bhaut Hua 🙏 🙏");
+        } else {
+          count--;
+          updateCounter();
+        }
+      }
+
+      function reset() {
+        count = 0;
+        updateCounter();
+      }
+    </script>
+  </body>
+</html>
